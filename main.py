@@ -12,7 +12,7 @@ import chess
 ChessEngineWeb: Flask = Flask("VoidMesh")
 _script_dir = Path(__file__).resolve().parent
 
-# Aliases
+
 web = ChessEngineWeb
 Page = str
 
@@ -56,12 +56,12 @@ def main() -> int:
     return 0
 
 if __name__ == "__main__":
-    RawDescriptionRichHelpFormatter.styles["argparse.prog"] = "bold white"       # Имя программы
-    RawDescriptionRichHelpFormatter.styles["argparse.groups"] = "bold yellow"    # Заголовки секций (options:)
-    RawDescriptionRichHelpFormatter.styles["argparse.args"] = "underline bold red"        # Флаги (-h, --help)
-    RawDescriptionRichHelpFormatter.styles["argparse.metavar"] = "italic bright_black"# Параметры (FILE, NUMBER)
-    RawDescriptionRichHelpFormatter.styles["argparse.help"] = "white"            # Текст описания
-    RawDescriptionRichHelpFormatter.styles["argparse.default"] = "dim italic"    # Значения по умолчанию
+    RawDescriptionRichHelpFormatter.styles["argparse.prog"] = "bold white"
+    RawDescriptionRichHelpFormatter.styles["argparse.groups"] = "bold yellow"
+    RawDescriptionRichHelpFormatter.styles["argparse.args"] = "underline bold red"
+    RawDescriptionRichHelpFormatter.styles["argparse.metavar"] = "italic bright_black"
+    RawDescriptionRichHelpFormatter.styles["argparse.help"] = "white"
+    RawDescriptionRichHelpFormatter.styles["argparse.default"] = "dim italic"
 
 
     parser = argparse.ArgumentParser(
@@ -79,7 +79,7 @@ if __name__ == "__main__":
         add_help=False
     )
     parser.add_argument("-h", "--help", action="help", default=argparse.SUPPRESS, help="This help page.")
-    parser.add_argument("-c", "--config", type=str, default=f"{_script_dir}config.toml", help="Config of VoidMesh.") # пошел нахуй ваня с требованием создания мессенджера anix. - ntcd_prime.
+    parser.add_argument("-c", "--config", type=str, default=f"{_script_dir}config.toml", help="Config of VoidMesh.")
     parser.add_argument("-H", "--home", type=str, default=_script_dir, help="Home directory of VoidMesh.")
     parser.add_argument("-P", "--pagdir", type=str, default=f"{_script_dir}pages/", help="Directory of pages VoidMesh.")
     parser.add_argument("-S", "--stcdir", type=str, default=f"{_script_dir}static/", help="Directory of static VoidMesh.")
