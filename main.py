@@ -74,9 +74,10 @@ if __name__ == "__main__":
 
             GitHub: [link=https://github.com/ntcd-lol/voidmesh]https://github.com/ntcd-lol/voidmesh[/link]
         """),
-        formatter_class=RawDescriptionRichHelpFormatter
+        formatter_class=RawDescriptionRichHelpFormatter,
+        add_help=False
     )
-    parser.add_help = False
+    parser.add_argument("-h", "--help", action="help", default=argparse.SUPPRESS, help="This help page.")
     parser.add_argument("-c", "--config", type=str, default=f"{_script_dir}config.toml", help="Config of VoidMesh.") # пошел нахуй ваня с требованием создания мессенджера anix. - ntcd_prime.
     parser.add_argument("-H", "--home", type=str, default=_script_dir, help="Home directory of VoidMesh.")
     parser.add_argument("-P", "--pagdir", type=str, default=f"{_script_dir}pages/", help="Directory of pages VoidMesh.")
