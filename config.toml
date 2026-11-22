@@ -1,0 +1,20 @@
+[global]
+app = "VoidMesh"
+ver = 0
+ver_str = "Prototype 0.0.1.0+indev"
+
+desc = "The chess engine, that created from 0, with a high level of customization."
+creators = ["ntcd_lol"]
+links = { "GitHub" = "https://github.com/ntcd-lol/voidmesh" }
+
+[creators.ntcd_lol]
+name = "ntcd_lol"
+role = "First Maintainer"
+links = [
+  { title = "GitHub", label = "ntcd_lol", url = "https://github.com/ntcd-lol" },
+  { title = "Telegram", label = "NTheCuteDrone", url = "https://t.me/NTheCuteDrone" },
+]
+
+[web]
+page_dir = "./pages/"
+static_dir = "./static/"
