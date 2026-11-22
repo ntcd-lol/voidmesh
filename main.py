@@ -3,13 +3,14 @@
 import argparse
 from pathlib import Path
 from flask import Flask
+import sqlite3
 import chess
 
-ChessEngine: Flask = Flask("VoidMesh")
+ChessEngineWeb: Flask = Flask("VoidMesh")
 _script_dir = Path(__file__).resolve().parent
 
 # Aliases
-app = ChessEngine
+web = ChessEngine
 Page = str
 
 class CachedFolder:
@@ -40,19 +41,21 @@ class PagesRender:
         self.static = CachedFolder(self._stc_dir)
 
 
-@app.route('/')
+@web.route('/')
 def root() -> Page:
     return "<h1>Hello, World!</h1>"
 
-def start(app: Flask, pages: Path, static: Path) -> None:
+def start(web: Flask, pages: Path, static: Path) -> None:
     _page_ren = PagesRender(pages, static)
+    web.config["STARTED"] = True
 
 def main() -> int:
-    app.run()
+    web.run()
     return 0
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="VoidMesh Protorype - Alpha 0.0.1.0+indev.")
+    parser.add_argument("-c", "--config", type=str, default=f"{_script_dir}config.toml", help="Config of VoidMesh.") # пошел нахуй ваня с требованием создания мессенджера anix. - ntcd_prime.
     parser.add_argument("-H", "--home", type=str, default=_script_dir, help="Home directory of VoidMesh.")
     parser.add_argument("-P", "--pagdir", type=str, default=f"{_script_dir}pages/", help="Directory of pages VoidMesh.")
     parser.add_argument("-S", "--stcdir", type=str, default=f"{_script_dir}static/", help="Directory of static VoidMesh.")
