@@ -65,12 +65,13 @@ if __name__ == "__main__":
 
 
     parser = argparse.ArgumentParser(
-        prog="VoidMesh Prototype - Alpha 0.0.1.0+indev.",
+        prog="VoidMesh - Prototype 0.0.1.0+indev.",
         description=textwrap.dedent("""\
             [yellow bold]VoidMesh[/yellow bold] - The chess engine, that created from 0, with a high level of customization.
-            Creator - [bold]ntcd_lol[/bold]] [italic](GitHub: [link=https://github.com/ntcd-lol]ntcd_lol[/link], Telegram: [link=https://t.me/NTheCuteDrone]NTheCuteDrone[/link])[/italic].
+                Creator - [bold]ntcd_lol[/bold]] [italic](GitHub: [link=https://github.com/ntcd-lol]ntcd_lol[/link], Telegram: [link=https://t.me/NTheCuteDrone]NTheCuteDrone[/link])[/italic].
 
-            [yellow]│[/yellow] [italic]Now in development. You're still on Prototype.[/italic]
+            [yellow]│[/yellow] [italic bold red]Changes:[/]
+            [yellow]│[/yellow] Now in development. You're still on Prototype.
 
             GitHub: [link=https://github.com/ntcd-lol/voidmesh]https://github.com/ntcd-lol/voidmesh[/link]
         """),
